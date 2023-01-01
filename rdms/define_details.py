@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash
 
 from login_details import details
-
+import sqlite3
 
 app = Flask(__name__) 
 
@@ -13,7 +13,7 @@ app.secret_key = '1s5e1521def421s431d5'
 
 # Must be the same connection present in '__init__.py'
 # app.config['SQLALCHEMY_DATABASE_URL']='mysql://username:password@host:port/database
-app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite3://// C:\\Student_Result\\rdms\\database\\site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///data.db'
 db = SQLAlchemy(app)
 
 

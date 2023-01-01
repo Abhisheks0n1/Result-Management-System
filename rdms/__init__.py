@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 from datetime import timedelta
+import sqlite3
 
 
 # Initialize flask app
@@ -13,7 +14,7 @@ app.secret_key = '1s5e1521def421s431d5'
 
 # Change this URI if you are working with this project on your machine
 # Configure database connection 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite3://// C:\Student_Result\\rdms\\database\\site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
 # Suppress warnings 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
