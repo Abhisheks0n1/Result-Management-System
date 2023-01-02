@@ -1,16 +1,20 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import Flask
+from flask import render_template
+from flask import request, redirect, url_for, flash
 from werkzeug.security import check_password_hash
 from flask_login import login_required, login_user, logout_user
 from flask_login import current_user
+import json, urllib
+import time
 
-from rdms import db, app 
-from rdms.models import Users 
+from rdms import db, app
+from rdms.models import Users
 
 
 # App home page
 @app.route('/')
 def index():
-    return render_template('home.html')
+    return render_template("home.html")
 
 # Handle student and admin login
 @app.route('/login', methods=['POST', 'GET']) 
