@@ -62,17 +62,17 @@ def login():
 @app.route('/about')
 def about():
     """Render about.html file."""
-    return render_template('about.html')
+    return render_template("about.html")
 
 @app.route('/contact')
 def contact():
     """Render contact.html file."""
-    return render_template('contact.html')
+    return render_template("contact.html")
 
 @app.route('/details')
 def details():
     """Render details.html file."""
-    return render_template('details.html')
+    return render_template("details.html")
 
 @app.route('/result')
 @login_required
@@ -88,9 +88,9 @@ def result():
                         f"SELECT DISTINCT code, description, result \
                         FROM `results` WHERE email = '{user_email}'") 
     return render_template(
-            'result.html', 
-            profile_info=profile_info, 
-            student_result=student_result)
+            "result.html",
+            profile_info = profile_info,
+            student_result = student_result)
 
 # Handle page not found error (404)
 @app.errorhandler(404)
@@ -101,4 +101,4 @@ def not_found_error(error):
 def logout():
     """Logout user and redirect to home page"""
     logout_user()
-    return redirect(url_for('index')) 
+    return redirect(url_for("index"))
