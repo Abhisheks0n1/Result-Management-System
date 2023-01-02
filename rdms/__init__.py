@@ -18,6 +18,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
 # Suppress warnings 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['pool_pre_ping'] = True
 
 # Configure app to remember user login for 180 seconds on browser terminate
 app.config['REMEMBER_COOKIE_DURATION'] = timedelta(seconds=180)
