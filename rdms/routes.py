@@ -1,11 +1,8 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 from flask import request, redirect, url_for, flash
 from werkzeug.security import check_password_hash
 from flask_login import login_required, login_user, logout_user
 from flask_login import current_user
-import json, urllib
-import time
 
 from rdms import db, app
 from rdms.models import Users
@@ -95,7 +92,7 @@ def result():
 # Handle page not found error (404)
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('404.html')  
+    return render_template("404.html")
 
 @app.route('/logout')
 def logout():
